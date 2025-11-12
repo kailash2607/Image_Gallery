@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Image Gallery</title>
+  <link rel="stylesheet" href="{% static 'gallery/style.css' %}">
+</head>
+<body>
+  <h1 class="title">Interactive Image Gallery</h1>
+  <div class="gallery">
+    <img src="{% static 'gallery/images/img1.jpg' %}" alt="Image 1" onclick="openModal(this)">
+    <img src="{% static 'gallery/images/img2.jpg' %}" alt="Image 2" onclick="openModal(this)">
+    <img src="{% static 'gallery/images/img3.jpg' %}" alt="Image 3" onclick="openModal(this)">
+    <img src="{% static 'gallery/images/img4.jpg' %}" alt="Image 4" onclick="openModal(this)">
+    <img src="{% static 'gallery/images/img5.jpg' %}" alt="Image 5" onclick="openModal(this)">
+  </div>
+
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
+  </div>
+
+  <script src="{% static 'gallery/script.js' %}"></script>
+</body>
+</html>
